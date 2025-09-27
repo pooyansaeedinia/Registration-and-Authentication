@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign In - Authentication System{% endblock %}
+
+{% block contents %}
+<div class="auth-form-container">
+  <div class="text-center mb-4">
+    <div class="auth-icon mb-3">
+      <i class="fas fa-sign-in-alt"></i>
+    </div>
+    <h2>Welcome Back</h2>
+    <p class="form-description">Sign in to your account to continue your journey</p>
+  </div>
+
+  <form method="post" id="loginForm" novalidate>
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="id_username">
+        <i class="fas fa-user input-icon"></i>
+        Username
+      </label>
+      {{ form.username }}
+      {% if form.username.errors %}
+        <div class="field-error">{{ form.username.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label for="id_password">
+        <i class="fas fa-lock input-icon"></i>
+        Password
+      </label>
+      <div class="password-input-wrapper">
+        {{ form.password }}
+        <button type="button" class="password-toggle" onclick="AuthSystem.togglePasswordVisibility(this.previousElementSibling)">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+      {% if form.password.errors %}
+        <div class="field-error">{{ form.password.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <!-- Remember Me & Forgot Password -->
+    <div class="form-options">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">
+          Remember me
+        </label>
+      </div>
+      <a href="/forgot-password/" class="forgot-password-link">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      <span class="btn-text">Sign In</span>
+      <span class="btn-loading" style="display: none;">
+        <span class="loading-spinner"></span>
+        Signing In...
+      </span>
+    </button>
+  </form>
+
+  {% if error_message %}
+    <div class="error-message">
+      <i class="fas fa-exclamation-triangle"></i>
+      {{ error_message }}
+    </div>
+  {% endif %}
+
+  <div class="auth-links">
+    <p class="text-center mb-0">
+      Don't have an account? 
+      <a href="/register/" class="auth-link">Create Account</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add password toggle functionality
+    const passwordToggle = document.querySelector('.password-toggle');
+    if (passwordToggle) {
+        passwordToggle.addEventListener('click', function() {
+            const input = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    }
+
+    // Form submission with loading state
+    const form = document.getElementById('loginForm');
+    const submitBtn = form.querySelector('.btn-submit');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+
+    form.addEventListener('submit', function(e) {
+        // Show loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-flex';
+        submitBtn.disabled = true;
+    });
+
+    // Auto-focus on username field
+    const usernameField = document.querySelector('input[name="username"]');
+    if (usernameField) {
+        usernameField.focus();
+    }
+
+    // Enter key navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const activeElement = document.activeElement;
+            if (activeElement.tagName === 'INPUT') {
+                const inputs = Array.from(form.querySelectorAll('input'));
+                const currentIndex = inputs.indexOf(activeElement);
+                const nextInput = inputs[currentIndex + 1];
+                
+                if (nextInput) {
+                    e.preventDefault();
+                    nextInput.focus();
+                } else if (activeElement.name === 'password') {
+                    // Submit form when Enter is pressed on password field
+                    e.preventDefault();
+                    form.submit();
+                }
+            }
+        }
+    });
+
+    // Remember me functionality
+    const rememberMe = document.getElementById('rememberMe');
+    const usernameInput = document.querySelector('input[name="username"]');
+    
+    // Load saved username if remember me was checked
+    if (localStorage.getItem('rememberedUsername')) {
+        usernameInput.value = localStorage.getItem('rememberedUsername');
+        rememberMe.checked = true;
+    }
+
+    // Save username when form is submitted
+    form.addEventListener('submit', function() {
+        if (rememberMe.checked) {
+            localStorage.setItem('rememberedUsername', usernameInput.value);
+        } else {
+            localStorage.removeItem('rememberedUsername');
+        }
+    });
+});
+</script>
+{% endblock %}

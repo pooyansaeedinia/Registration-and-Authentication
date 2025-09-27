@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Registration_app'
+    'Registration_app',
+    'login_app',
+    'password_reset_app'
 ]
 
 MIDDLEWARE = [
@@ -120,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -135,7 +141,7 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'your-app-password')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'your-email@gmail.com')
 
 # Authentication
-AUTH_USER_MODEL = 'registration_app.CustomUser'
+AUTH_USER_MODEL = 'Registration_app.CustomUser'
 LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = '/login/'
 
