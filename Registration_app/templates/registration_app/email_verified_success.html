@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Email Verified - Authentication System{% endblock %}
+
+{% block contents %}
+<div class="auth-form-container">
+  <div class="text-center mb-4">
+    <div class="success-icon mb-3">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h2>Email Verified!</h2>
+    <p class="form-description">Your email has been successfully verified</p>
+  </div>
+
+  <div class="success-message">
+    <div class="success-content">
+      <h4>Welcome to Our Platform!</h4>
+      <p>Your account is now active and ready to use. You can sign in with your credentials.</p>
+    </div>
+  </div>
+
+  <div class="next-steps">
+    <div class="step-item">
+      <div class="step-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="step-text">
+        <h5>Account Secured</h5>
+        <p>Your email is verified and your account is secure</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-icon">
+        <i class="fas fa-sign-in-alt"></i>
+      </div>
+      <div class="step-text">
+        <h5>Ready to Sign In</h5>
+        <p>Use your username and password to access your account</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-links">
+    <a href="/login/" class="btn-submit">
+      <span class="btn-text">Sign In Now</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

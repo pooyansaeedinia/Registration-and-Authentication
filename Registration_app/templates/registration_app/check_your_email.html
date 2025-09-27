@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Check Your Email - Authentication System{% endblock %}
+
+{% block contents %}
+<div class="auth-form-container">
+  <div class="text-center mb-4">
+    <div class="success-icon mb-3">
+      <i class="fas fa-envelope-open"></i>
+    </div>
+    <h2>Check Your Email</h2>
+    <p class="form-description">We've sent a verification link to your email address</p>
+  </div>
+
+  <div class="success-message">
+    <div class="success-content">
+      <h4>Registration Successful!</h4>
+      <p>Please check your email and click the verification link to activate your account.</p>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <div class="instruction-item">
+      <div class="instruction-icon">
+        <i class="fas fa-inbox"></i>
+      </div>
+      <div class="instruction-text">
+        <h5>Check Your Inbox</h5>
+        <p>Look for an email from our system with the subject "Email Verification"</p>
+      </div>
+    </div>
+
+    <div class="instruction-item">
+      <div class="instruction-icon">
+        <i class="fas fa-spam"></i>
+      </div>
+      <div class="instruction-text">
+        <h5>Check Spam Folder</h5>
+        <p>Sometimes emails end up in your spam or junk folder</p>
+      </div>
+    </div>
+
+    <div class="instruction-item">
+      <div class="instruction-icon">
+        <i class="fas fa-mouse-pointer"></i>
+      </div>
+      <div class="instruction-text">
+        <h5>Click the Link</h5>
+        <p>Click the verification link in the email to activate your account</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-links">
+    <p class="text-center mb-0">
+      Didn't receive the email? 
+      <a href="/register/" class="auth-link">Try Again</a>
+    </p>
+    <p class="text-center mt-2 mb-0">
+      Already verified? 
+      <a href="/login/" class="auth-link">Sign In</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

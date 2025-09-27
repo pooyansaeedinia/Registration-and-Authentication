@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Verification Failed - Authentication System{% endblock %}
+
+{% block contents %}
+<div class="auth-form-container">
+  <div class="text-center mb-4">
+    <div class="error-icon mb-3">
+      <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <h2>Verification Failed</h2>
+    <p class="form-description">We couldn't verify your email address</p>
+  </div>
+
+  <div class="error-message">
+    <div class="error-content">
+      <h4>Verification Unsuccessful</h4>
+      <p>The verification link may have expired or is invalid. Please try registering again.</p>
+    </div>
+  </div>
+
+  <div class="help-section">
+    <div class="help-card">
+      <div class="help-icon">
+        <i class="fas fa-info-circle"></i>
+      </div>
+      <div class="help-content">
+        <h4>What happened?</h4>
+        <p>Verification links expire after a certain time for security reasons. You'll need to register again to get a new verification email.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-links">
+    <a href="/register/" class="btn-submit">
+      <span class="btn-text">Register Again</span>
+    </a>
+    <p class="text-center mt-3 mb-0">
+      Already have an account? 
+      <a href="/login/" class="auth-link">Sign In</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
