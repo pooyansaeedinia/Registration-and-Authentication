@@ -22,7 +22,7 @@ def login_view(request):
                 if user.is_active:
                     login(request, user)
                     messages.success(request, "You are now logged in")
-                    return redirect('product_list')
+                    return redirect('dashboard')
                 else:
                     error_message = "your email is not verified"
             else:

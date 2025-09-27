@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c25a02d-4c13-4a46-92f4-a43f8318d240" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Registeration_Authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Registeration_Authentication.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Registeration_Authentication/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration_Authentication/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Registeration_Authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Registeration_Authentication/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Registration_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Registration_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SETUP.md" beforeDir="false" afterPath="$PROJECT_DIR$/SETUP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env_template.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +24,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
-  <component name="ProjectId" id="33HqL4vFnFCjBIWKnh5PDqUifVm" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="33IAegTSbGHO3ua688vIr08QMY6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -32,9 +40,9 @@
     "Django Server.Registeration_Authentication.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/POOYAN/OneDrive/Desktop/Registeration_Authentication",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,17 +51,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\POOYAN\OneDrive\Desktop\Registeration_Authentication" />
-      <recent name="C:\Users\POOYAN\OneDrive\Desktop\Registeration_Authentication\templates" />
-      <recent name="C:\Users\POOYAN\OneDrive\Desktop\Registeration_Authentication\Registeration_Authentication" />
-      <recent name="C:\Users\POOYAN\OneDrive\Desktop\Registeration_Authentication\Registration_app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\POOYAN\OneDrive\Desktop\Registeration_Authentication" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Registeration_Authentication" type="Python.DjangoServer" factoryName="Django server">
       <module name="Registeration_Authentication" />
@@ -93,11 +90,12 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0c25a02d-4c13-4a46-92f4-a43f8318d240" name="Changes" comment="" />
-      <created>1758984285720</created>
+      <created>1758994309634</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1758984285720</updated>
-      <workItem from="1758984286765" duration="1585000" />
+      <updated>1758994309634</updated>
+      <workItem from="1758994310794" duration="447000" />
+      <workItem from="1758995050287" duration="420000" />
     </task>
     <servers />
   </component>

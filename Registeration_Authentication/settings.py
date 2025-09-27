@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Registration_app',
     'login_app',
-    'password_reset_app'
+    'password_reset_app',
+    'homepage',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
@@ -143,7 +145,7 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'your-email@gmail.com')
 # Authentication
 AUTH_USER_MODEL = 'Registration_app.CustomUser'
 LOGIN_URL = '/login/'
-LOGOUT_REDIRECT_URL = '/login/'
+
 
 # Security Settings
 SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'False').lower() == 'true'

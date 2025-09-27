@@ -1,0 +1,30 @@
+# Gmail Email Configuration Guide
+# =================================
+
+# Step 1: Enable 2-Factor Authentication on your Gmail account
+# - Go to https://myaccount.google.com/security
+# - Enable 2-Step Verification
+
+# Step 2: Generate App Password
+# - Go to https://myaccount.google.com/apppasswords
+# - Select "Mail" and generate a password
+# - Copy the 16-character password (no spaces)
+
+# Step 3: Update settings.py with your credentials:
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-actual-email@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'your-16-char-app-password'  # App password from step 2
+DEFAULT_FROM_EMAIL = 'your-actual-email@gmail.com'
+
+# Step 4: Replace the console backend in settings.py with the above configuration
+
+# Alternative: Use environment variables
+# Create a .env file with:
+EMAIL_HOST_USER=your-actual-email@gmail.com
+EMAIL_HOST_PASSWORD=your-16-char-app-password
+DEFAULT_FROM_EMAIL=your-actual-email@gmail.com
+
+# Then uncomment the environment variable lines in settings.py
